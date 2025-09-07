@@ -31,12 +31,12 @@ class Solution {
             return 0;
         }
 
-        // Recursively explore 3 possible moves
+        // Recursively explore 3 possible moves (straight down, diagonal right, diagonal left
         int down = helper(matrix, i + 1, j);
         int downLeft = helper(matrix, i + 1, j - 1);
         int downRight = helper(matrix, i + 1, j + 1);
 
-        // Curr value + best choice minimum
+        // Curr value + best choice between 3 possible moves
         return matrix[i][j] + Math.min(down, Math.min(downLeft, downRight));
     }
 }
